@@ -12,6 +12,14 @@ const move = function(game, event) {
   if (event.code === 'ArrowUp') {
     game.upMove();
   }
+
+  if (event.code === 'ArrowRight') {
+    game.rightMove();
+  }
+
+  if (event.code === 'ArrowDown') {
+    game.downMove();
+  }
   putValuesInBoard(game);
 };
 

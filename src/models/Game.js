@@ -16,18 +16,22 @@ class Game {
 
   downMove() {
     this.board.downMove();
+    this.board.placeNumber();
   }
 
   upMove() {
     this.board.upMove();
+    this.board.placeNumber();
   }
 
   rightMove() {
     this.board.rightMove();
+    this.board.placeNumber();
   }
 
   leftMove() {
     this.board.leftMove();
+    this.board.placeNumber();
   }
 
   getBoard() {
