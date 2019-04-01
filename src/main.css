@@ -16,8 +16,9 @@ body {
 }
 
 .board {
-  width: 20%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
+  font-size:40px;
 
   border: 1px solid black;
   border-collapse: collapse;
@@ -25,5 +26,50 @@ body {
 
 td {
     border: 1px solid black;
+    width:25%;
     text-align: center;
+}
+
+.color-2 {
+  background-color: coral;
+}
+
+.color-4 {
+  background-color: rgb(223, 69, 13);
+}
+
+.color-8 {
+  background-color: rgb(145, 60, 29);
+}
+
+.color-16 {
+  background-color: orange;
+}
+
+.color-32 {
+  background-color: rgb(209, 147, 31);
+}
+
+.color-64 {
+  background-color: rgb(189, 5, 5);
+}
+
+.color-128 {
+  background-color: yellow;
+}
+
+.color-256 {
+  background-color: yellow;
+}
+
+.color-512 {
+  background-color: lightcoral;
+}
+
+.color-1024 {
+  background-color: lightcoral;
+}
+
+.color-2048 {
+  background-color: lightsalmon;
 }

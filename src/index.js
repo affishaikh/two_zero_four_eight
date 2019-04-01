@@ -31,6 +31,7 @@ const putValuesInBoard = function(game) {
   for (let row = 0; row < board.length; row++) {
     for (let column = 0; column < board.length; column++) {
       cells[index].innerText = board[row][column];
+      cells[index].className = 'color-' + board[row][column];
       index++;
     }
   }
