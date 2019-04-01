@@ -15,6 +15,16 @@ const getPositionsOfEmptyPlaces = function(board) {
   return positionsOfEmptyPlaces;
 };
 
+const transpose = function(board) {
+  const result = [[],[],[],[]];
+  for (let row = 0; row < board.length; row++) {
+    for (let column = 0; column < board.length; column++) {
+      result[column][row] = board[row][column];
+    }
+  }
+  return result;
+}
+
 const moveNumbersToLeft = function(board) {
   for (let row = 0; row < board.length; row++) {
     for (let column = 1; column < board.length; column++) {
@@ -61,6 +71,13 @@ class Board {
     this.board = moveNumbersToLeft(this.board.slice());
     this.board = addNumbersTowardsLeft(this.board.slice());
     this.board = moveNumbersToLeft(this.board.slice());
+    this.placeNumber();
+  }
+
+  upMove() {
+    this.board = transpose(this.board.slice());
+    this.leftMove();
+    this.board = transpose(this.board.slice());
     this.placeNumber();
   }
 
