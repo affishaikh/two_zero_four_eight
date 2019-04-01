@@ -24,7 +24,6 @@ yarn-error.log*
 
 #Copies
 /TwoZeroFourEight
-/src/App.js
 /src/App.test.js
 *.swp
 README.md

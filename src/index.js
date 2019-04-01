@@ -1,37 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Game from './models/Game';
 import './main.css';
-// import App from './App';
+import Table from './Table';
 
-const table = (
-  <table className="board" id="board">
-    <tbody>
-      <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-      </tr>
-    </tbody>
-  </table>
-);
+const move = function(game, event) {
+    if (event.code === 'ArrowLeft') {
+      game.leftMove();
+    }
+    putValuesInBoard(game);
+  };
+  
+  const putValuesInBoard = function(game) {
+    const cells = document.getElementsByTagName('td');
+    const board = game.getBoard();
+  
+    let index = 0;
+    for (let row = 0; row < board.length; row++) {
+      for (let column = 0; column < board.length; column++) {
+        cells[index].innerText = board[row][column];
+        index++;
+      }
+    }
+  };
+  
+  const initialize = function() {
+    const game = new Game();
+    game.startGame();
+    const body = document.querySelector('body');
+    body.onkeydown = move.bind(null, game);
+    putValuesInBoard(game);
+  };
+  
+window.onload = initialize;  
 
-ReactDOM.render(table, document.getElementById('root'));
+ReactDOM.render(<Table/>, document.getElementById('root'));
